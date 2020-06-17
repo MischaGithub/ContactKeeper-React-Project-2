@@ -14,7 +14,7 @@ import {
 
 // Create intial state
 const ContactState = (props) => {
-  const intialState = {
+  const initialState = {
     contacts: [
       {
         id: 1,
@@ -35,12 +35,12 @@ const ContactState = (props) => {
         name: "Harry White",
         email: "harry@gmail.com",
         phone: "333-333-3333",
-        type: "personal",
+        type: "professional",
       },
     ],
   };
 
-  const [state, dispatch] = useReducer(contactReducer, intialState);
+  const [state, dispatch] = useReducer(contactReducer, initialState);
 
   // Add Contact
 
