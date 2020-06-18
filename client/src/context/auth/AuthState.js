@@ -30,7 +30,7 @@ const AuthState = (props) => {
 
   // Login User
 
-  // Log out
+  // Logout
 
   // Clear Errors
 
