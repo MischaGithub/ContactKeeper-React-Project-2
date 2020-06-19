@@ -2,7 +2,7 @@
 
 /* Global Styles */
 :root {
-  --primary-color: #003699;
+  --primary-color: #0000ff;
   --dark-color: #333333;
   --light-color: #f4f4f4;
   --danger-color: #dc3545;
@@ -276,6 +276,15 @@ img {
 .badge-white,
 .alert-white {
   background: #fff;
+  color: #333;
+  border: #ccc solid 1px;
+}
+
+.btn-grey,
+.bg-grey,
+.badge-grey,
+.alert-grey {
+  background: #808080;
   color: #333;
   border: #ccc solid 1px;
 }
