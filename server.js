@@ -4,6 +4,9 @@ const express = require("express");
 // Database
 const connectDB = require("./config/db");
 
+// Path
+const path = require("path");
+
 // Intialize express into the variable app
 const app = express();
 
@@ -13,15 +16,20 @@ connectDB();
 // Init Middleware
 app.use(express.json({ extended: false }));
 
-// Route
-app.get("/", (req, res) =>
-  res.json({ msg: "Welcome to the Conatct Keeper API..." })
-);
-
 // Define Routes
 app.use("/api/users", require("./routes/users"));
 app.use("/api/auth", require("./routes/auth"));
 app.use("/api/contacts", require("./routes/contacts"));
+
+// Serve static assets in production
+if (process.env.NODE_ENV === "production") {
+  // Set Static Folder
+  app.use(express.static("client/build"));
+
+  app.get("*", (req, res) =>
+    res.sendFile(path.resolve(_dirname, "client", "build", "index.html"))
+  );
+}
 
 // PORT Variable
 const PORT = process.env.PORT || 5000;
