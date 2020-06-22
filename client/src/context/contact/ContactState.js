@@ -38,7 +38,7 @@ const ContactState = (props) => {
     } catch (err) {
       dispatch({
         type: CONTACT_ERROR,
-        payload: err.respone.msg,
+        payload: err.response.msg,
       });
     }
   };
